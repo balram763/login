@@ -19,12 +19,8 @@ function Register() {
     }
   }, [user]);
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleRegister = async (e) => {
@@ -55,7 +51,7 @@ function Register() {
             name="name"
             placeholder="Full name"
             value={formData.name}
-            onChange={handleInput}
+            onChange={handleChange}
             className="border rounded px-3 py-2 text-sm"
             required
           />
@@ -65,7 +61,7 @@ function Register() {
             name="email"
             placeholder="Email"
             value={formData.email}
-            onChange={handleInput}
+            onChange={handleChange}
             className="border rounded px-3 py-2 text-"
             required
           />
@@ -75,7 +71,7 @@ function Register() {
             name="password"
             placeholder="Password"
             value={formData.password}
-            onChange={handleInput}
+            onChange={handleChange}
             className="border rounded px-3 py-2 text-sm "
             required
           />
