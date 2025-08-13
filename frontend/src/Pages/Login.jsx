@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8080/api/user", form);
+      const res = await axios.post("https://login-anto.onrender.com/api/user", form);
 
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
