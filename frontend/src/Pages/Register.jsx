@@ -27,7 +27,7 @@ function Register() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/user/register",
+        "https://login-anto.onrender.com/api/user/register",
         formData
       );
       localStorage.setItem("token", res.data.token);
