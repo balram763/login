@@ -30,11 +30,14 @@ function Register() {
         "https://login-anto.onrender.com/api/user/register",
         formData
       );
-      localStorage.setItem("token", res.data.token);
-      navigate("/");
-      setFormData({ name: "", email: "", password: "" });
-    } catch (error) {
-      alert(err.response?.data?.message || "something went wrong");
+
+        if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        navigate("/")
+      }
+      alert("user Registered");
+    } catch (err) {
+      alert(err?.response?.data?.message || "something went wrong");
     }
   };
 
